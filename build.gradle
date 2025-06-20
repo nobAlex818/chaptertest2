@@ -37,6 +37,20 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.32'
     testImplementation 'org.projectlombok:lombok:1.18.32'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
+
+    implementation 'org.springframework:spring-jdbc:6.1.10',
+            'org.mongodb:mongodb-driver-sync:5.1.2',
+            'org.antlr:ST4:4.3.4',
+            "org.projectlombok:lombok:1.18.32"
+
+    testImplementation 'com.intuit.karate:karate-junit5:1.4.1',
+            "com.intuit.karate:karate-netty:0.9.2",
+            "com.intuit.karate:karate-apache:0.9.6",
+            "net.masterthought:cucumber-reporting:5.8.1",
+            'junit:junit:4.13.2'
+
+    annotationProcessor "org.projectlombok:lombok:1.18.32"
+    testAnnotationProcessor "org.projectlombok:lombok:1.18.32"
 }
 
 java {
@@ -52,7 +66,7 @@ application {
 }
 
 test {
-    useJUnitPlatform()
+    useJUnit()
 }
 
 task stage(dependsOn: ['build', 'clean'])
